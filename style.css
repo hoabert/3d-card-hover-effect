@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #161e2e;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 1000px;
+}
+
+.helper {
+    width: 20px;
+    height: 20px;
+    background-color: brown;
+    position: absolute;
+}
+
+.card {
+    position: relative;
+    min-width: 300px;
+    width: 300px;
+    height: 500px;
+    background: radial-gradient(
+        circle,
+        rgba(18, 92, 129, 1) 0%,
+        rgba(2, 8, 37, 1) 100%
+    );
+    border-top: 1px solid #3b74ad;
+    border-left: 1px solid #3b74ad;
+    border-right: 2px solid #08325e;
+    border-bottom: 2px solid #08325e;
+
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+
+    box-shadow: 3px 3px 10px #0c1021;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.34, 1.8, 0.64, 1);
+}
+
+.card:hover {
+    box-shadow: 15px 20px 25px #0c1021;
+}
+
+.card h2 {
+    color: #cacffc;
+    border-bottom: 1px solid #a8f9ff;
+    padding-bottom: 15px;
+}
+
+.stars {
+    padding: 15px;
+    border-radius: 7px;
+}
+
+.fa-star {
+    color: #05ebeb;
+}
+
+.description {
+    color: white;
+    padding: 10px 20px;
+    height: 200px;
+}
+
+.description-background {
+    border: 2px solid #05293d;
+    border-radius: 7px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.description-bottom {
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+}
+
+.element-icon {
+}
+
+.fa-lightbulb,
+.fa-tint {
+    display: inline-block;
+    color: #fff;
+
+    width: 50px;
+    height: 50px;
+    padding: 0.6em 0.5em;
+
+    border-radius: 50%;
+}
+
+.fa-tint {
+    background-color: #0468d4;
+    border: 3px solid #a8f9ff;
+}
+
+.fa-lightbulb {
+    background-color: #bf740b;
+    border: 3px solid #e0d6a6;
+}
+
+.upper-left {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+
+.centered-container {
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+    width: 250px;
+    height: 100px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
