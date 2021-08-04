@@ -64,9 +64,12 @@ body {
 }
 
 .card h2 {
+    font-size: 1.25rem;
+    background: rgba(0, 10, 43, 0.338);
     color: #cacffc;
-    border-bottom: 1px solid #a8f9ff;
-    padding: 17px;
+    border-bottom: 1px solid #a8f9ff56;
+    /* border-radius: 9px; */
+    padding: 10px;
 }
 
 .stars {
@@ -94,6 +97,7 @@ body {
 .creature-image {
     background-color: #25162e5d;
     color: rgb(220, 255, 181);
+    border-radius: 13px 13px 0 0;
 
     padding: 13px;
     height: 180px;
