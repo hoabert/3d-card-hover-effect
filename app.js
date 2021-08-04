@@ -1,11 +1,11 @@
 // Dom elements
-let cards = document.getElementsByClassName('card');
+let cards = document.getElementsByClassName('card-container');
 const rotationContraint = 20;
 
 // Event Handlers
-const cardMouseMoveHandler = (card) => {
-    console.log('a');
-    card.addEventListener('mousemove', (e) => {
+const cardMouseMoveHandler = (cardContainer) => {
+    const card = cardContainer.querySelector('.card');
+    cardContainer.addEventListener('mousemove', (e) => {
         let xAxis =
             (card.getBoundingClientRect().width / 2 +
                 card.getBoundingClientRect().x -
@@ -18,29 +18,21 @@ const cardMouseMoveHandler = (card) => {
                 e.clientY) /
             rotationContraint;
 
-        card.style.transform = `scale(1.05) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        console.log('!');
+        card.style.transform = `translateZ(25px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        card.style.outline = 'thin solid #0468d4';
     });
 };
 
-const cardMouseEnterHandler = (card) => {
-    card.addEventListener('mouseenter', (e) => {
-        setTimeout(() => {
-            card.style.transition = `all 0.15s linear`;
-        }, 500);
-    });
-};
+const cardMouseExitHandler = (cardContainer) => {
+    const card = cardContainer.querySelector('.card');
 
-const cardMouseExitHandler = (card) => {
-    card.addEventListener('mouseleave', (e) => {
-        card.style.transition = `all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)`;
-        card.style.transform = `scale(1) rotateY(0deg) rotateX(0deg)`;
+    cardContainer.addEventListener('mouseleave', (e) => {
+        card.style.transform = `translateZ(0px) rotateY(0deg) rotateX(0deg)`;
+        card.style.outline = 'none';
     });
 };
 
 Array.from(cards).forEach((card) => {
-    console.log('1');
     cardMouseMoveHandler(card);
-    cardMouseEnterHandler(card);
     cardMouseExitHandler(card);
 });
